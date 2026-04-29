@@ -1,0 +1,940 @@
+/* ==========================================
+   TIDE Magazine - main stylesheet
+   Media GCSE Component 3
+   ========================================== */
+
+
+/* basic reset so everything starts the same */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: #fdfaf4;
+    color: #1a1a1a;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+
+/* === HEADER === */
+
+header {
+    border-bottom: 2px solid #1a1a1a;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 36px;
+    letter-spacing: 4px;
+}
+
+.logo span {
+    color: #e94e1b;
+}
+
+.tagline {
+    font-size: 13px;
+    color: #555;
+    font-style: italic;
+}
+
+
+
+/* === NAV BAR === */
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    padding: 15px 20px;
+    background-color: #1a1a1a;
+    color: #fdfaf4;
+    flex-wrap: wrap;
+}
+
+nav a {
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 5px 0;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: #e94e1b;
+}
+
+nav a.current {
+    color: #e94e1b;
+    border-bottom: 2px solid #e94e1b;
+}
+
+
+
+/* === image placeholders (until I add my real photos) === */
+
+.placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    background-image: linear-gradient(135deg, #eae3d2 25%, #e2d9c4 25%, #e2d9c4 50%, #eae3d2 50%, #eae3d2 75%, #e2d9c4 75%);
+    background-size: 30px 30px;
+    color: #555;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.placeholder span {
+    background-color: #fdfaf4;
+    padding: 10px 15px;
+    border: 1px solid #1a1a1a;
+}
+
+
+
+/* === HERO (homepage only) === */
+
+.hero {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+@media (max-width: 800px) {
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+}
+
+.hero-image {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    background-color: #eae3d2;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-text .label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #e94e1b;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.hero-text h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 56px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 800px) {
+    .hero-text h1 {
+        font-size: 38px;
+    }
+}
+
+.hero-text p {
+    font-size: 17px;
+    color: #333;
+    margin-bottom: 25px;
+    max-width: 500px;
+}
+
+.read-btn {
+    display: inline-block;
+    background-color: #e94e1b;
+    color: white;
+    padding: 14px 28px;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.read-btn:hover {
+    background-color: #c23d0f;
+}
+
+
+
+/* === section title bars === */
+
+.section-title {
+    max-width: 1200px;
+    margin: 60px auto 30px;
+    padding: 0 40px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid #1a1a1a;
+}
+
+.section-title h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px;
+}
+
+.section-title span {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #555;
+}
+
+
+
+/* === article grid on homepage === */
+
+.article-grid {
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+@media (max-width: 800px) {
+    .article-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.article-card {
+    display: block;
+}
+
+.article-card .card-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: #eae3d2;
+    margin-bottom: 12px;
+    overflow: hidden;
+}
+
+.article-card .card-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #e94e1b;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.article-card h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    line-height: 1.2;
+    margin-bottom: 8px;
+}
+
+.article-card p {
+    font-size: 15px;
+    color: #555;
+}
+
+
+
+/* === quote boxes === */
+
+.quote-box {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 50px 40px;
+    text-align: center;
+    border-top: 2px solid #1a1a1a;
+    border-bottom: 2px solid #1a1a1a;
+}
+
+.quote-box p {
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px;
+    line-height: 1.3;
+    color: #1a1a1a;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 800px) {
+    .quote-box p {
+        font-size: 22px;
+    }
+}
+
+.quote-box .quote-author {
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #555;
+}
+
+
+
+/* === article/feature page === */
+
+.article-top {
+    max-width: 800px;
+    margin: 60px auto 30px;
+    padding: 0 40px;
+    text-align: center;
+}
+
+.article-top .label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #e94e1b;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.article-top h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 52px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 800px) {
+    .article-top h1 {
+        font-size: 34px;
+    }
+}
+
+.article-top .sub {
+    font-size: 19px;
+    color: #555;
+    font-style: italic;
+}
+
+.article-top .byline {
+    margin-top: 25px;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #555;
+}
+
+
+.big-image {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 40px;
+}
+
+.big-image .image-box {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: #eae3d2;
+}
+
+.big-image .caption {
+    font-size: 13px;
+    color: #555;
+    font-style: italic;
+    margin-top: 10px;
+    text-align: center;
+}
+
+
+.article {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 40px;
+    font-size: 18px;
+    color: #222;
+}
+
+.article p {
+    margin-bottom: 20px;
+}
+
+/* drop cap - makes the first letter big like in magazines */
+.article p.first-p::first-letter {
+    font-family: 'DM Serif Display', serif;
+    font-size: 65px;
+    float: left;
+    line-height: 0.8;
+    padding: 8px 10px 0 0;
+    color: #e94e1b;
+}
+
+.article h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 26px;
+    margin: 35px 0 15px;
+}
+
+.article blockquote {
+    border-left: 4px solid #e94e1b;
+    padding: 10px 0 10px 25px;
+    margin: 30px 0;
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    line-height: 1.3;
+    color: #1a1a1a;
+}
+
+
+
+/* === audio box on features page === */
+
+.audio-box {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 25px;
+    background-color: #eae3d2;
+    border: 2px solid #1a1a1a;
+}
+
+.audio-box .audio-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #e94e1b;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.audio-box h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.audio-box .audio-meta {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.audio-box audio {
+    width: 100%;
+}
+
+.audio-note {
+    font-size: 12px;
+    color: #555;
+    margin-top: 10px;
+    padding: 8px;
+    background-color: #fdfaf4;
+    border: 1px dashed #999;
+    text-align: center;
+}
+
+
+
+/* second image on feature page */
+
+.second-image {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 40px;
+}
+
+.second-image .image-box {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    background-color: #eae3d2;
+}
+
+
+
+/* back to home link */
+
+.back-link {
+    text-align: center;
+    margin: 50px auto 20px;
+    padding: 0 40px;
+}
+
+.back-link a {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #555;
+    border-bottom: 1px solid #555;
+    padding-bottom: 3px;
+}
+
+.back-link a:hover {
+    color: #e94e1b;
+    border-color: #e94e1b;
+}
+
+
+
+/* === other pages: page heading === */
+
+.page-head {
+    max-width: 1000px;
+    margin: 60px auto 30px;
+    padding: 0 40px;
+    text-align: center;
+}
+
+.page-head .label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #e94e1b;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.page-head h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 56px;
+    line-height: 1;
+    margin-bottom: 15px;
+}
+
+.page-head p {
+    font-size: 17px;
+    color: #555;
+    font-style: italic;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+
+/* === STYLE PAGE content === */
+
+.content-grid {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+@media (max-width: 800px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+}
+
+.content-grid .image-box {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    background-color: #eae3d2;
+}
+
+.content-grid .text-col h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 34px;
+    line-height: 1.1;
+    margin-bottom: 15px;
+}
+
+.content-grid .text-col p {
+    font-size: 17px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.content-grid .text-col p.first-p::first-letter {
+    font-family: 'DM Serif Display', serif;
+    font-size: 55px;
+    float: left;
+    line-height: 0.8;
+    padding: 6px 10px 0 0;
+    color: #e94e1b;
+}
+
+
+.tips {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 40px;
+    background-color: #eae3d2;
+    border-top: 2px solid #1a1a1a;
+    border-bottom: 2px solid #1a1a1a;
+}
+
+.tips h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.tips ol {
+    padding-left: 20px;
+    font-size: 17px;
+}
+
+.tips li {
+    margin-bottom: 12px;
+    padding-left: 10px;
+}
+
+.tips li::marker {
+    color: #e94e1b;
+    font-weight: 700;
+}
+
+
+
+/* === FOOD PAGE rankings === */
+
+.intro-text {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 0 40px;
+    font-size: 18px;
+    color: #222;
+}
+
+.intro-text p {
+    margin-bottom: 18px;
+}
+
+.intro-text p.first-p::first-letter {
+    font-family: 'DM Serif Display', serif;
+    font-size: 60px;
+    float: left;
+    line-height: 0.8;
+    padding: 8px 10px 0 0;
+    color: #e94e1b;
+}
+
+
+.rankings {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 0 40px;
+}
+
+.ranking-item {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 20px;
+    align-items: start;
+    padding: 25px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.ranking-item .rank-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 60px;
+    color: #e94e1b;
+    line-height: 1;
+}
+
+.ranking-item h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 26px;
+    margin-bottom: 5px;
+}
+
+.ranking-item .score {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.ranking-item p {
+    font-size: 16px;
+    color: #333;
+}
+
+
+
+/* === MUSIC PAGE playlist === */
+
+.playlist {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 0 40px;
+}
+
+.playlist-head {
+    display: grid;
+    grid-template-columns: 50px 1fr 1fr 60px;
+    gap: 20px;
+    padding: 10px 0;
+    border-bottom: 2px solid #1a1a1a;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #555;
+    font-weight: 700;
+}
+
+.playlist-row {
+    display: grid;
+    grid-template-columns: 50px 1fr 1fr 60px;
+    gap: 20px;
+    padding: 18px 0;
+    border-bottom: 1px solid #ddd;
+    align-items: center;
+}
+
+.playlist-row .track-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    color: #e94e1b;
+}
+
+.playlist-row .track-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 19px;
+}
+
+.playlist-row .picked-by {
+    font-size: 14px;
+    color: #555;
+    font-style: italic;
+}
+
+.playlist-row .track-time {
+    font-size: 14px;
+    color: #555;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 650px) {
+    .playlist-head {
+        display: none;
+    }
+    .playlist-row {
+        grid-template-columns: 40px 1fr 50px;
+    }
+    .playlist-row .picked-by {
+        grid-column: 2;
+    }
+}
+
+
+.end-note {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 30px 40px;
+    text-align: center;
+    border-top: 1px solid #1a1a1a;
+    border-bottom: 1px solid #1a1a1a;
+}
+
+.end-note p {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    color: #1a1a1a;
+    line-height: 1.4;
+}
+
+
+
+/* === ABOUT PAGE === */
+
+.about-text {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 0 40px;
+    font-size: 18px;
+    color: #222;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+}
+
+.about-text p.first-p::first-letter {
+    font-family: 'DM Serif Display', serif;
+    font-size: 65px;
+    float: left;
+    line-height: 0.8;
+    padding: 8px 10px 0 0;
+    color: #e94e1b;
+}
+
+.about-text h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 26px;
+    margin: 35px 0 15px;
+}
+
+
+.team {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 40px;
+    background-color: #eae3d2;
+}
+
+.team h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+@media (max-width: 700px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.team-member {
+    text-align: center;
+}
+
+.team-member .role {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #e94e1b;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.team-member h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.team-member p {
+    font-size: 14px;
+    color: #555;
+    font-style: italic;
+}
+
+
+.faq {
+    max-width: 750px;
+    margin: 60px auto;
+    padding: 0 40px;
+}
+
+.faq h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.faq-item {
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #ddd;
+}
+
+.faq-item .question {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    margin-bottom: 8px;
+    color: #1a1a1a;
+}
+
+.faq-item .answer {
+    font-size: 16px;
+    color: #333;
+}
+
+
+
+/* === FOOTER === */
+
+footer {
+    background-color: #1a1a1a;
+    color: #fdfaf4;
+    padding: 50px 40px 25px;
+    margin-top: 60px;
+}
+
+.footer-top {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #555;
+}
+
+@media (max-width: 700px) {
+    .footer-top {
+        grid-template-columns: 1fr;
+    }
+}
+
+.footer-top h4 {
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    color: #e94e1b;
+}
+
+.footer-top ul {
+    list-style: none;
+}
+
+.footer-top li {
+    margin-bottom: 8px;
+}
+
+.footer-top a:hover {
+    color: #e94e1b;
+}
+
+.footer-brand p {
+    font-size: 14px;
+    color: #aaa;
+    margin-top: 10px;
+    max-width: 300px;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 25px auto 0;
+    font-size: 12px;
+    color: #888;
+    text-align: center;
+}
